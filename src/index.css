@@ -3,8 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: white;
   background-color: #030615;
 
   font-synthesis: none;
@@ -13,32 +12,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 #root {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   display: relative;
 }
 
-.imgContainer{
+.imgContainer {
   display: flex;
   flex-direction: column;
   max-height: 100vh;
 }
 
-.bgImage{
+.bgImage {
   width: 100%;
   height: 100%;
   flex: 1;
   object-fit: cover;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -50,22 +49,21 @@ footer{
   padding: 1rem;
 }
 
-footer div{
+footer div {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
 }
 
-footer h2{
+footer h2 {
   font-size: 1.4rem;
 }
 
-footer h1{
+footer h1 {
   font-size: 0.9rem;
   font-weight: 200;
 }
 
-footer button{
+footer button {
   background: transparent;
   border: none;
   outline: none;
@@ -75,22 +73,22 @@ footer button{
   cursor: pointer;
 }
 
-footer button i{
+footer button i {
   font-size: 1.3rem;
 }
 
-footer button:hover{
+footer button:hover {
   opacity: 0.7;
 }
 
-.bgGradient{
+.bgGradient {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, #030615, rgba(255,255,255,0));
+  background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
 }
 
-.sidebar{
+.sidebar {
   position: fixed;
   inset: 0;
   display: flex;
@@ -98,14 +96,14 @@ footer button:hover{
   z-index: 10;
 }
 
-.bgOverlay{
+.bgOverlay {
   position: absolute;
   inset: 0;
   background: #030615;
   opacity: 0.6;
 }
 
-.sidebarContents{
+.sidebarContents {
   z-index: 15;
   position: relative;
   display: flex;
@@ -120,25 +118,67 @@ footer button:hover{
   background: #030615;
 }
 
-.sidebarContents div{
+.sidebarContents h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.sidebarContents div {
   flex: 1;
 }
 
-.sidebarContents button{
+.sidebarContents button {
   background: transparent;
   color: white;
   border: none;
   outline: none;
   margin-right: auto;
-}
-
-.sidebarContents button:hover{
-  opacity: 0.7;
   cursor: pointer;
+  transition-duration: 200ms;
+  padding: 1rem 0;
 }
 
-@media (min-width: 640px){
-  .sidebar{
+.sidebarContents button:hover {
+  opacity: 0.7;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.descriptionTitle {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.loadingState i {
+  opacity: 0.2;
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (min-width: 640px) {
+  .sidebar {
     position: relative;
     inset: unset;
     min-width: 30%;
@@ -146,12 +186,12 @@ footer button:hover{
     box-shadow: 0 0 40px 1px #030615;
   }
 
-  .sidebarContents{
+  .sidebarContents {
     margin: unset;
     width: 100%;
   }
-  
-  .bgOverlay{
+
+  .bgOverlay {
     right: 0;
     left: unset;
     width: 100vw;
